@@ -10,23 +10,19 @@ function sendMessage(issue, button) {
     const chatResponse = document.getElementById('chat-response');
     const chatButtons = document.getElementById('chat-buttons');
 
-    // Adicionar a mensagem do usuário
     const userMessage = document.createElement('div');
     userMessage.classList.add('chat-response', 'user');
     userMessage.textContent = `${issue}`;
-    chatResponse.innerHTML = ''; // Limpar respostas anteriores
+    chatResponse.innerHTML = '';
     chatResponse.appendChild(userMessage);
 
-    // Limpar botões e esconder
     chatButtons.style.display = 'none';
 
-    // Adicionar a mensagem da resposta com animação de digitação
     const responseMessage = document.createElement('div');
     responseMessage.classList.add('chat-response', 'typing');
-    responseMessage.textContent = ''; // Inicia como uma mensagem de digitação
+    responseMessage.textContent = '';
     chatResponse.appendChild(responseMessage);
 
-    // Definir a resposta com base no botão clicado
     let responseText = '';
     switch (issue) {
         case 'Problemas de cadastro':
@@ -43,13 +39,11 @@ function sendMessage(issue, button) {
             break;
     }
 
-    // Simular a digitação
     setTimeout(() => {
         responseMessage.classList.remove('typing');
-        responseMessage.textContent = responseText; // Mensagem de resposta
+        responseMessage.textContent = responseText;
     }, 1000);
 
-    // Exibir resposta
     chatResponse.appendChild(responseMessage);
-    document.getElementById('chat-buttons').style.display = 'flex'; // Mostrar botões
+    document.getElementById('chat-buttons').style.display = 'flex';
 }
