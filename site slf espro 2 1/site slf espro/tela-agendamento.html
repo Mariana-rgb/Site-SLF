@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Agendamento</title>
+    <link rel="stylesheet" href="tela-agendamento.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <div class="menu-dropdown" id="menu-dropdown">
+                <a href="index.html">Menu</a>
+                <a href="o-que-somos.html">O que somos</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="dicas.html">Dicas</a>
+            </div>
+        </div>
+        <div class="header-title">Minha Agenda</div>
+        <button class="profile" onclick="window.location.href='perfil.html'"></button>
+    </div>
+
+    <div class="content">
+        <div class="calendar">
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">&#9664;</button>
+                <div id="monthYear"></div>
+                <button onclick="changeMonth(1)">&#9654;</button>
+            </div>
+            <div class="calendar-body" id="calendar-body"></div>
+        </div>
+        <button class="new-appointment-button" onclick="window.location.href='agendamento.html'">Novos Agendamentos</button>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">Selecione uma opção para receber ajuda.</div>
+            <div id="chat-buttons" class="chat-button-container">
+                <button class="chat-button" onclick="sendMessage('Problemas de cadastro', this)">Cadastro</button>
+                <button class="chat-button" onclick="sendMessage('Problemas com senha', this)">Senha</button>
+                <button class="chat-button" onclick="sendMessage('Problemas de agendamento', this)">Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="tela-agendamento.js"></script>
+</body>
+</html>

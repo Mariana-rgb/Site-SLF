@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Layout branco6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1366px;
+    height: 768px;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.image-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: none;
+}
+
+.image-container:hover .tooltip {
+    display: block;
+}
+
+.header {
+    background-color: #f8c8dc;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    color: #fff;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 94%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f8c8dc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu-button:active {
+    background-color: #e2a8b8;
+}
+
+/* Estilos do chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: #f8c6d8;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width 0.3s, height 0.3s, border-radius 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.chat-container.expanded {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.chat-header {
+    background: #f8c6d8;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-body {
+    padding: 10px;
+    background: white;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.chat-body.hidden {
+    display: none;
+}
+
+.chat-body.visible {
+    display: flex;
+}
+
+.chat-response {
+    background: #9370DB;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    font-size: 16px;
+    display: block;
+    white-space: normal;
+}
+
+.chat-response.user {
+    background: #D3A0E4;
+    align-self: flex-end;
+}
+
+.chat-response.typing::after {
+    content: '...';
+    animation: typing 1s infinite;
+}
+
+@keyframes typing {
+    0% { content: '...'; }
+    50% { content: ''; }
+    100% { content: '...'; }
+}
+
+.chat-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.chat-button {
+    background: #9370DB;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: background 0.3s;
+}
+
+.chat-button.clicked {
+    background: #6a1b9a;
+}

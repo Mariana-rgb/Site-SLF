@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Que Somos</title>
+    <link rel="stylesheet" href="o-que-somos.css">
+</head>
+<body>
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Título "O que somos?" -->
+        <div class="header">
+            <!-- Botão "Menu" -->
+            <a href="index.html" class="left-btn">Menu</a> 
+            <h1>O que somos?</h1>
+        </div>
+
+        <!-- Informações sobre o SLF -->
+        <div class="content">
+            <p>
+                Nós entendemos que, para muitas mulheres, acessar cuidados médicos de qualidade pode ser um desafio. Por isso, criamos o 
+                <strong>SLF (Saúde e liberdade feminina)</strong>, um espaço dedicado especialmente para você! Nosso objetivo é tornar 
+                o acesso a hospitais e postos de saúde públicos mais fácil e acessível para mulheres de baixa renda.
+            </p>
+            <p>No SLF, você encontrará:</p>
+
+            <span>Informações Claras e Atualizadas:</span>
+            <p>
+                Navegue por uma lista abrangente de hospitais e postos de saúde, com detalhes sobre serviços oferecidos, horários de 
+                funcionamento e como chegar até lá.
+            </p>
+
+            <span>Guias de Navegação Simples:</span>
+            <p>
+                Descubra como se inscrever para atendimentos, quais documentos são necessários e como agendar consultas de forma descomplicada.
+            </p>
+
+            <span>Dicas de Saúde Personalizadas:</span>
+            <p>
+                Acesse artigos e recursos feitos sob medida para abordar suas preocupações de saúde específicas, desde cuidados preventivos até 
+                informações sobre tratamentos.
+            </p>
+
+            <span>Apoio e Orientação:</span>
+            <p>
+                Conte com nosso suporte para esclarecer dúvidas e ajudar você a encontrar o melhor atendimento para suas necessidades.
+            </p>
+
+            <p>
+                No SLF, acreditamos que todas as mulheres merecem cuidados de saúde dignos e acessíveis. Estamos aqui para apoiar você em cada passo 
+                do caminho, garantindo que você tenha acesso às informações e recursos de que precisa para cuidar de sua saúde com confiança. 
+                Visite-nos e descubra como podemos ajudar você a viver melhor e mais saudável. Juntas, podemos tornar o acesso à saúde uma 
+                realidade para todas!
+            </p>
+        </div>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">Selecione uma opção para receber ajuda.</div>
+            <div id="chat-buttons" class="chat-button-container">
+                <button class="chat-button" onclick="sendMessage('Problemas de cadastro', this)">Cadastro</button>
+                <button class="chat-button" onclick="sendMessage('Problemas com senha', this)">Senha</button>
+                <button class="chat-button" onclick="sendMessage('Problemas de agendamento', this)">Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="o-que-somos.js"></script>
+</body>
+</html>

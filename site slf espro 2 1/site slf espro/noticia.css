@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('Layout branco7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(255, 255, 255, 0.315);
+    z-index: -1;
+}
+.header {
+    background-color: rgba(147, 112, 219, 0.8);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Adicionado para o botão */
+}
+.menu-button {
+    position: absolute;
+    top: 19px;
+    left: 60px;
+    background-color: rgba(147, 112, 219, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+.menu-button:active {
+    background-color: #e2a8b8;
+}
+.news-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.news-item {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #9370DB;
+    border-radius: 5px;
+    background: #f8c6d8;
+}
+.news-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6a1b9a;
+}
+.news-date {
+    font-size: 14px;
+    color: #555;
+}
+.news-content {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+.news-link {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #6a1b9a;
+    text-decoration: underline;
+}
+/* Estilo para os ícones */
+.content span::before {
+    content: '🌸 ';
+    margin-right: 10px;
+}

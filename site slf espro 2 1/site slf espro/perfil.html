@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1366, height=768, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <!-- Botão de Voltar -->
+    <a href="tela-agendamento.html" class="menu-button">Voltar</a>
+
+    <!-- Header com fundo rosa pastel -->
+    <div class="header">
+        <h1>Perfil do Usuário</h1>
+    </div>
+
+    <!-- Ícone de perfil -->
+    <div class="image-container">
+        <img src="menina.png" alt="Ícone do Perfil"
+             onerror="this.style.display='none'; document.querySelector('.tooltip').style.display='block';">
+        <a class="tooltip" href="https://www.flaticon.com/br/icones-gratis/pessoas" title="pessoas ícones" target="_blank">
+            Pessoas ícones criados por Creartive - Flaticon
+        </a>
+    </div>
+
+    <!-- Formulário com campos para CPF, CEP, Cartão do SUS, Email e Número -->
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" value="">
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" value="">
+            </div>
+            <div class="form-group">
+                <label for="cartao_sus">Cartão do SUS</label>
+                <input type="text" id="cartao_sus" name="cartao_sus" placeholder="Digite seu Cartão do SUS" value="">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu E-mail" value="">
+            </div>
+            <div class="form-group">
+                <label for="numero">Número de Telefone</label>
+                <input type="text" id="numero" name="numero" placeholder="Digite seu número de telefone" value="">
+            </div>
+        </form>
+    </div>
+    
+    <!-- Chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">Selecione uma opção para receber ajuda.</div>
+            <div id="chat-buttons" class="chat-button-container">
+                <button class="chat-button" onclick="sendMessage('Problemas de cadastro', this)">Cadastro</button>
+                <button class="chat-button" onclick="sendMessage('Problemas com senha', this)">Senha</button>
+                <button class="chat-button" onclick="sendMessage('Problemas de agendamento', this)">Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>

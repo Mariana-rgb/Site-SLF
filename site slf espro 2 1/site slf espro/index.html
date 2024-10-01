@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="o-que-somos.html" class="left-btn">O que somos?</a>
+        <a href="login.html" class="right-btn">login</a>
+    </div>
+
+    <div class="image-container">
+        <img src="logo-slf.png" alt="Logo da Empresa">
+    </div>
+
+    <div class="button-container">
+        <a href="noticias.html" class="btn">Notícias</a>
+        <a href="dicas.html" class="btn">Dicas</a>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">Selecione uma opção para receber ajuda.</div>
+            <div class="chat-button-container" id="chat-buttons">
+                <button class="chat-button" onclick="sendMessage('Problemas de cadastro', this)">Cadastro</button>
+                <button class="chat-button" onclick="sendMessage('Problemas com senha', this)">Senha</button>
+                <button class="chat-button" onclick="sendMessage('Problemas de agendamento', this)">Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

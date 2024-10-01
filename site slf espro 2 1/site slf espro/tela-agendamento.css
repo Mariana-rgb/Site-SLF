@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('Layout branco5.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 109%;
+    background-color: rgba(255, 255, 255, 0.315);
+    z-index: -1;
+}
+.header {
+    background-color: rgba(248, 198, 216, 0.8); 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-title {
+    font-size: 24px; 
+    font-weight: bold;
+}
+.header .menu-container {
+    position: relative;
+}
+.header .menu-button {
+    background-color: rgba(248, 198, 216, 0.8); 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.header .menu-button:hover {
+    background-color: rgba(216, 162, 177, 0.8); 
+}
+.header .menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    width: 200px;
+}
+.header .menu-dropdown a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+}
+.header .menu-dropdown a:hover {
+    background-color: rgba(248, 198, 216, 0.8); 
+    color: white;
+}
+.header .profile {
+    background-color: white; /* Cor rosa pastel com transparência */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 41px;
+    height: 41px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.profile::before {
+    content: "";
+    display: inline-block;
+    width: 30px; /* Largura da imagem */
+    height: 30px; /* Altura da imagem */
+    background-image: url('Perfil icone.png'); /* Caminho para a imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+    margin-right: -9px; /* Espaço entre a imagem e o texto */
+    margin-left: -10px;
+}
+.content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 60px 20px 20px 20px; /* Margens para evitar sobreposição com o cabeçalho */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.calendar {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.calendar-body .day {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.calendar-body .day.selected {
+    background-color: rgba(248, 198, 216, 0.8);
+}
+.new-appointment-button {
+    background-color: rgba(216, 162, 177, 0.8); 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    margin-top: 20px;
+}
+.new-appointment-button:hover {
+    background-color: rgba(184, 139, 150, 0.8); 
+}
+
+/* Estilos do chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: #f8c6d8;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width 0.3s, height 0.3s, border-radius 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.chat-container.expanded {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.chat-header {
+    background: #f8c6d8;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-body {
+    padding: 10px;
+    background: white;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.chat-body.hidden {
+    display: none;
+}
+
+.chat-body.visible {
+    display: flex;
+}
+
+.chat-response {
+    background: #9370DB;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    font-size: 16px;
+    display: block;
+    white-space: normal;
+}
+
+.chat-response.user {
+    background: #D3A0E4;
+    align-self: flex-end;
+}
+
+.chat-response.typing::after {
+    content: '...';
+    animation: typing 1s infinite;
+}
+
+@keyframes typing {
+    0% { content: '...'; }
+    50% { content: ''; }
+    100% { content: '...'; }
+}
+
+.chat-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.chat-button {
+    background: #9370DB;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: background 0.3s;
+}
+
+.chat-button.clicked {
+    background: #6a1b9a;
+}
