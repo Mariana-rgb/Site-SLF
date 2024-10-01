@@ -5,7 +5,7 @@ body {
     background-size: cover; /* Faz a imagem cobrir toda a área do fundo */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Não repete a imagem */
-    position: relative; /* Necessário para posicionar o chat corretamente */
+    position: relative;
     height: 100vh; /* Faz a página ocupar toda a altura da tela */
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@ body::before {
     box-sizing: border-box;
 }
 .form-group button {
-    background-color: #f8c6d8; /* Cor rosa pastel */
+    background-color: #f8c6d8;
     color: white;
     border: none;
     border-radius: 4px;
@@ -70,7 +70,7 @@ body::before {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: #f8c6d8; /* Cor rosa pastel */
+    background-color: #f8c6d8;
     color: white;
     border: none;
     border-radius: 4px;
