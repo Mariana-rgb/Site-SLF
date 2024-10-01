@@ -1,4 +1,3 @@
-// Supondo que as informações do usuário foram armazenadas em variáveis
 const userData = {
     cpf: sessionStorage.getItem('cpf') || "123.456.789-00", // Exemplo de CPF
     cep: sessionStorage.getItem('cep') || "12345-678",       // Exemplo de CEP
@@ -7,7 +6,7 @@ const userData = {
     numero: sessionStorage.getItem('numero') || "(11) 91234-5678" // Exemplo de Telefone
 };
 
-// Preencher os campos do formulário com os dados do usuário
+// Preenche os campos do formulário com os dados do usuário
 document.getElementById('cpf').value = userData.cpf;
 document.getElementById('cep').value = userData.cep;
 document.getElementById('cartao_sus').value = userData.cartaoSUS;
@@ -27,19 +26,17 @@ function sendMessage(issue, button) {
     const userMessage = document.createElement('div');
     userMessage.classList.add('chat-response', 'user');
     userMessage.textContent = `${issue}`;
-    chatResponse.innerHTML = ''; // Limpar respostas anteriores
+    chatResponse.innerHTML = '';
     chatResponse.appendChild(userMessage);
 
-    // Limpar botões e esconder
     document.getElementById('chat-buttons').style.display = 'none';
 
-    // Adicionar a mensagem da resposta com animação de digitação
+
     const responseMessage = document.createElement('div');
     responseMessage.classList.add('chat-response', 'typing');
-    responseMessage.textContent = ''; // Inicia como uma mensagem de digitação
+    responseMessage.textContent = '';
     chatResponse.appendChild(responseMessage);
 
-    // Definir a resposta com base no botão clicado
     let responseText = '';
     switch (issue) {
         case 'Problemas de cadastro':
@@ -56,11 +53,10 @@ function sendMessage(issue, button) {
             break;
     }
 
-    // Simular a digitação
     setTimeout(() => {
         responseMessage.classList.remove('typing');
-        responseMessage.textContent = responseText; // Mensagem de resposta
+        responseMessage.textContent = responseText;
         chatResponse.appendChild(responseMessage);
-        document.getElementById('chat-buttons').style.display = 'flex'; // Mostrar botões
+        document.getElementById('chat-buttons').style.display = 'flex';
     }, 1000);
 }
