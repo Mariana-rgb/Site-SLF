@@ -14,19 +14,19 @@ function sendMessage(issue, button) {
     const userMessage = document.createElement('div');
     userMessage.classList.add('chat-response', 'user');
     userMessage.textContent = `${issue}`;
-    chatResponse.innerHTML = ''; // Limpar respostas anteriores
+    chatResponse.innerHTML = ''; // Limpa respostas anteriores
     chatResponse.appendChild(userMessage);
 
-    // Limpar botões e esconder
+    // Limpa botões e esconder
     chatButtons.style.display = 'none';
 
-    // Adicionar a mensagem da resposta com animação de digitação
+    // Adiciona a mensagem da resposta com animação de digitação
     const responseMessage = document.createElement('div');
     responseMessage.classList.add('chat-response', 'typing');
     responseMessage.textContent = ''; // Inicia como uma mensagem de digitação
     chatResponse.appendChild(responseMessage);
 
-    // Definir a resposta com base no botão clicado
+    // Defini a resposta com base no botão clicado
     let responseText = '';
     switch (issue) {
         case 'Problemas de cadastro':
@@ -43,15 +43,15 @@ function sendMessage(issue, button) {
             break;
     }
 
-    // Simular a digitação
+    // Simula a digitação
     setTimeout(() => {
         responseMessage.classList.remove('typing');
         responseMessage.textContent = responseText; // Mensagem de resposta
     }, 1000);
 
-    // Exibir resposta
+    // Exibi a resposta
     chatResponse.appendChild(responseMessage);
-    document.getElementById('chat-buttons').style.display = 'flex'; // Mostrar botões
+    document.getElementById('chat-buttons').style.display = 'flex'; // Mostra os botões
 }
 
 document.getElementById('agendamento-form').addEventListener('submit', function(event) {
