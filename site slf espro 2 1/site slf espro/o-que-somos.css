@@ -1,10 +1,10 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('Layout branco2.jpg'); /* Adiciona a imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área do fundo */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Não repete a imagem */
+    background-image: url('Layout branco2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .container {
     background-color: rgba(147, 112, 219, 0.8); /* Cor lilás semi-transparente */
