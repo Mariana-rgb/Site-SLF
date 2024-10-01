@@ -1,21 +1,21 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio do formulário
 
-    // Coletar dados do formulário
+    // Coleta os dados do formulário
     const cpf = document.getElementById('cpf').value;
     const sus = document.getElementById('sus').value;
     const email = document.getElementById('email').value;
     const cep = document.getElementById('cep').value;
     const numero = document.getElementById('numero').value;
 
-    // Armazenar em sessionStorage
+    // Armazena em sessionStorage
     sessionStorage.setItem('cpf', cpf);
     sessionStorage.setItem('sus', sus);
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('cep', cep);
     sessionStorage.setItem('numero', numero);
 
-    // Redirecionar para agendamento.html
+    // Redireciona para agendamento.html
     window.location.href = "agendamento.html";
 });
 
@@ -31,23 +31,19 @@ function sendMessage(issue, button) {
     const chatResponse = document.getElementById('chat-response');
     const chatButtons = document.getElementById('chat-buttons');
 
-    // Adicionar a mensagem do usuário
     const userMessage = document.createElement('div');
     userMessage.classList.add('chat-response', 'user');
     userMessage.textContent = `${issue}`;
-    chatResponse.innerHTML = ''; // Limpar respostas anteriores
+    chatResponse.innerHTML = '';
     chatResponse.appendChild(userMessage);
 
-    // Limpar botões e esconder
     chatButtons.style.display = 'none';
 
-    // Adicionar a mensagem da resposta com animação de digitação
     const responseMessage = document.createElement('div');
     responseMessage.classList.add('chat-response', 'typing');
-    responseMessage.textContent = ''; // Inicia como uma mensagem de digitação
+    responseMessage.textContent = '';
     chatResponse.appendChild(responseMessage);
 
-    // Definir a resposta com base no botão clicado
     let responseText = '';
     switch (issue) {
         case 'Problemas de cadastro':
@@ -64,13 +60,11 @@ function sendMessage(issue, button) {
             break;
     }
 
-    // Simular a digitação
     setTimeout(() => {
         responseMessage.classList.remove('typing');
-        responseMessage.textContent = responseText; // Mensagem de resposta
+        responseMessage.textContent = responseText;
     }, 1000);
 
-    // Exibir resposta
     chatResponse.appendChild(responseMessage);
-    document.getElementById('chat-buttons').style.display = 'flex'; // Mostrar botões
+    document.getElementById('chat-buttons').style.display = 'flex';
 }
